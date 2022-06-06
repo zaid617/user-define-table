@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABLE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(60, 7, 110, 0.333), rgba(224, 217, 118, 0.333));
+            height: 100vh;
+        }
+
+        .box {
+            border: 12px solid black;
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            font-weight: 500;
+            justify-content: space-between;
+            width: 400px;
+            padding: 20px;
+        }
+
+        .col {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+        }
+
+        #btn {
+            margin-top: 10px;
+            width: 200px;
+            height: 30px;
+            border-radius: 7px;
+            background-color: blueviolet;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        #btn:hover {
+            background-color: rgb(72, 48, 229);
+        }
+
+        #para {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border: 3px solid black;
+            font-size: 25px;
+            font-weight: 500;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="col">Enter Any Number: <input id="num" min="2" type="number"></div>
+        <div class="col">Enter multiplier Number :<input id="multi" type="number"></div>
+        <button id="btn" onclick="print()">Print</button><br>
+        <div id="para">
+
+        </div>
+
+        <script>
+            function print() {
+                let num;
+                let tab = "";
+                let multi;
+
+
+                num = Number(document.getElementById("num").value);
+                multi = Number(document.getElementById("multi").value);
+                for (let i = 0; i <= multi; i++) {
+                    tab = (`${tab} <p> ${num}x${i + 1}=${num * (i + 1)} </p>`);
+                }
+                document.getElementById("para").innerHTML = tab;
+            }
+        </script>
+</body>
+
+</html>
