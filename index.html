@@ -14,10 +14,16 @@
 
         body {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(60, 7, 110, 0.333), rgba(224, 217, 118, 0.333));
-            height: 100vh;
+            background: linear-gradient(rgba(60, 7, 110, 0.333), rgba(224, 217, 118, 0.333)) center fixed;
+            background-size: cover;
+            height: 100%;
+        }
+        h1{
+            font-size: 45px;
+            margin: 10px;
         }
 
         .box {
@@ -59,12 +65,14 @@
             border: 3px solid black;
             font-size: 25px;
             font-weight: 500;
+            display: none;
         }
     </style>
 
 </head>
 
 <body>
+    <h1>Multiplication Table</h1>
     <div class="box">
         <div class="col">Enter Any Number: <input id="num" min="2" type="number"></div>
         <div class="col">Enter multiplier Number :<input id="multi" type="number"></div>
@@ -82,10 +90,13 @@
 
                 num = Number(document.getElementById("num").value);
                 multi = Number(document.getElementById("multi").value);
-                for (let i = 0; i <= multi; i++) {
-                    tab = (`${tab} <p> ${num}x${i + 1}=${num * (i + 1)} </p>`);
+                for (let i = 1; i <= multi; i++) {
+                    tab = (`${tab} <p> ${num}x${i}=${num * i} </p>`);
+                    
                 }
                 document.getElementById("para").innerHTML = tab;
+                document.getElementById("para").style.display = "flex";
+                
             }
         </script>
 </body>
